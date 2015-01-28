@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<script src="http://api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU" type="text/javascript"></script>
+<div id="Map">
+    <script type="text/javascript">
+        // Как только будет загружен API и готов DOM, выполняем инициализацию
+        ymaps.ready(init);
+
+        var myMap
+        function init() {
+            // Создание экземпляра карты и его привязка к контейнеру с
+            // заданным id ("map")
+            myMap = new ymaps.Map('Map', {
+                // При инициализации карты, обязательно нужно указать
+                // ее центр и коэффициент масштабирования 
+                center: [58.780237, 29.250743],
+                zoom: 4
+            });
+
+            myMap.controls
+            // Добавление кнопки изменения масштаба
+                         .add('zoomControl')
+            // Линейка масштаба
+                        .add('mapTools');
+
+
+            var MoscowMark = new ymaps.Placemark([55.751419, 37.617801], {
+                iconContent: "Москва",
+                balloonContentHeader: "Город-герой Москва",
+                balloonContentBody: "<img src='/Images/Moscow.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#lightblueStretchyIcon' });
+            var St_Petersburg = new ymaps.Placemark([59.93395, 30.317538], { iconContent: "Санкт-Петербург",
+                balloonContentHeader: "Город-герой Санкт-Петербург",
+                balloonContentBody: "<img src='/Images/StPetersburg.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Volgograd = new ymaps.Placemark([48.704599, 44.515801], { iconContent: "Волгоград",
+                balloonContentHeader: "Город-герой Волгоград",
+                balloonContentBody: "<img src='/Images/Volgograd.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Tula = new ymaps.Placemark([54.192151, 37.619715], { iconContent: "Тула",
+                balloonContentHeader: "Город-герой Тула",
+                balloonContentBody: "<img src='/Images/Tula.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 7 декабря 1976 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Novorossiysk = new ymaps.Placemark([44.718858, 37.776492], { iconContent: "Новороссийск",
+                balloonContentHeader: "Город-герой Новороссийск",
+                balloonContentBody: "<img src='/Images/Novorossiysk.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 14 сентября 1973 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Murmansk = new ymaps.Placemark([68.961231, 33.076545], { iconContent: "Мурманск",
+                balloonContentHeader: "Город-герой Мурманск",
+                balloonContentBody: "<img src='/Images/Murmansk.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 6 мая 1985 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Smolensk = new ymaps.Placemark([54.77857, 31.999095], { iconContent: "Смоленск",
+                balloonContentHeader: "Город-герой Смоленск",
+                balloonContentBody: "<img src='/Images/Smolensk.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 6 мая 1985 года"
+            }, { preset: 'twirl#blueStretchyIcon' });
+            var Kiev = new ymaps.Placemark([50.446646, 30.520928], { iconContent: "Киев",
+                balloonContentHeader: "Город-герой Киев",
+                balloonContentBody: "<img src='/Images/Kiev.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#yellowStretchyIcon' });
+            var Minsk = new ymaps.Placemark([53.880404, 27.716001], { iconContent: "Минск",
+                balloonContentHeader: "Город-герой Минск",
+                balloonContentBody: "<img src='/Images/Minsk.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 26 июня 1974 года"
+            }, { preset: 'twirl#redStretchyIcon' });
+            var Kerch = new ymaps.Placemark([45.350855, 36.474264], { iconContent: "Керчь",
+                balloonContentHeader: "Город-герой Керчь",
+                balloonContentBody: "<img src='/Images/Kerch.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 14 сентября 1973 года"
+            }, { preset: 'twirl#yellowStretchyIcon' });
+            var Sevastopol = new ymaps.Placemark([44.613581, 33.52403], { iconContent: "Севастополь",
+                balloonContentHeader: "Город-герой Севастополь",
+                balloonContentBody: "<img src='/Images/Sevastopol.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#yellowStretchyIcon' });
+            var Odessa = new ymaps.Placemark([46.466575, 30.739846], { iconContent: "Одесса",
+                balloonContentHeader: "Город-герой Одесса",
+                balloonContentBody: "<img src='/Images/Odessa.jpg';/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 года"
+            }, { preset: 'twirl#yellowStretchyIcon' });
+            var Brest = new ymaps.Placemark([52.087017, 23.655207], { iconContent: "Брестская крепость",
+                balloonContentHeader: "Крепость-герой Брест",
+                balloonContentBody: "<img src='/Images/Brest.jpg'/>",
+                balloonContentFooter: "Дата присвоения звания - 8 мая 1965 год"
+            }, { preset: 'twirl#redStretchyIcon' });
+
+
+            myMap.geoObjects.add(Brest);
+            myMap.geoObjects.add(MoscowMark);
+            myMap.geoObjects.add(St_Petersburg);
+            myMap.geoObjects.add(Murmansk);
+            myMap.geoObjects.add(Smolensk);
+            myMap.geoObjects.add(Tula);
+            myMap.geoObjects.add(Novorossiysk);
+            myMap.geoObjects.add(Volgograd);
+            myMap.geoObjects.add(Odessa);
+            myMap.geoObjects.add(Sevastopol);
+            myMap.geoObjects.add(Kerch);
+            myMap.geoObjects.add(Minsk);
+            myMap.geoObjects.add(Kiev);
+        }
+        
+    </script>
+</div>

@@ -1,0 +1,5 @@
+C:\Users\Sparko\Documents\Visual Studio 2010\Projects\YandexMapApp\YandexMapApp\bin\YandexMapApp.dll
+C:\Users\Sparko\Documents\Visual Studio 2010\Projects\YandexMapApp\YandexMapApp\bin\YandexMapApp.pdb
+C:\Users\Sparko\Documents\Visual Studio 2010\Projects\YandexMapApp\YandexMapApp\obj\Debug\YandexMapApp.dll
+C:\Users\Sparko\Documents\Visual Studio 2010\Projects\YandexMapApp\YandexMapApp\obj\Debug\YandexMapApp.pdb
+C:\Users\Sparko\Documents\Visual Studio 2010\Projects\YandexMapApp\YandexMapApp\obj\Debug\YandexMapApp.csprojResolveAssemblyReference.cache
